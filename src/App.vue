@@ -1,27 +1,17 @@
 <template>
-  <div id="app">
-    <HelloWorld msg="Welcome to more recipes App"/>
+<div class="home">
+  <div class="wrapper">
+    <router-view></router-view>
   </div>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+export default { name: 'App' };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './assets/css/bootstrap.min.css';
+@import './assets/vendor/fontawesome/css/font-awesome.min.css';
+@import './assets/css/main.css';
 </style>
