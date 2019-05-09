@@ -2,21 +2,21 @@
 <div class="articles-pagination">
   <nav>
     <ul class="pagination">
-      <li v-if="pagination.current_page != 1"
-      :href="`/recipes?page=${pagination.current_page - 1}`">
+      <li v-if="$store.getters.meta.current_page != 1"
+      :href="`/recipes?page=${$store.getters.meta.current_page - 1}`">
         <a aria-label="Previous">
       <i class="fa fa-chevron-left fa-fw" aria-hidden="true"></i>
         </a>
       </li>
 
-      <li v-for="(page, i) in pagination.last_page" :key="i"
+      <li v-for="(page, i) in $store.getters.meta.last_page" :key="i"
       :href="`/recipes?page=${page}`"
-      :class="page == pagination.current_page? 'active':''">
+      :class="page == $store.getters.meta.current_page? 'active':''">
       <a>{{page}}</a>
       </li>
 
-      <li v-if="pagination.current_page != pagination.last_page"
-      :href="`/recipes?page=${pagination.current_page + 1}`">
+      <li v-if="$store.getters.meta.current_page != $store.getters.meta.last_page"
+      :href="`/recipes?page=${$store.getters.meta.current_page + 1}`">
       <a aria-label="Previous">
       <i class="fa fa-chevron-right fa-fw" aria-hidden="true"></i>
         </a>
@@ -30,9 +30,6 @@
 <script>
 export default {
   name: 'Pagination',
-  props: {
-    pagination: Object,
-  },
 };
 </script>
 

@@ -1,9 +1,10 @@
 <template>
 <ul class="xtra-nav">
-    <li v-for="(log, i) in logs" v-if="log.auth === auth" :key="i">
-        <a :href="log.link" :title="log.title">
-            <i class="fa" :class="log.style" aria-hidden="true"></i>
-        </a>
+    <li v-for="(log, i) in logs" :key="i"
+    v-if="log.auth === $store.getters.auth">
+    <a :href="log.link" :title="log.title">
+      <i class="fa" :class="log.style" aria-hidden="true"></i>
+    </a>
     </li>
 </ul>
 </template>
@@ -33,18 +34,9 @@ export default {
           auth: true,
         },
       ],
-      auth: false,
     };
   },
-  methods: {
-    authLogins() {
-      return this.logs.map((log) => {
-        if (log.auth === this.auth) {
-          return log;
-        }
-      });
-    },
-  },
+
 };
 </script>
 

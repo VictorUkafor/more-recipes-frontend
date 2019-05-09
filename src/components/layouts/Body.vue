@@ -3,20 +3,20 @@
             <div class="container">
                 <div class="recipes">
 
-                    <div class="recipes-header clearfix">
-                      <h2 class="title">{{listingTitle}}</h2>
+                    <div class="recipes-header clearfix" id="all-recipes">
+                      <h2 class="title">{{$store.getters.listingTitle}}</h2>
                     </div>
 
                     <SearchForm/>
 
                     <div class="recipes-items clearfix">
                       <Recipe
-                      v-for="(recipe, i) in recipes"
-                      :key="i" :recipe="recipe"
+                      v-for="(recipe, i) in $store.getters.recipes"
+                      :key="i" :recipe=recipe
                       />
                     </div>
                 </div>
-                <Pagination :pagination=pagination />
+                <Pagination />
             </div>
         </div>
 </template>
@@ -32,11 +32,6 @@ export default {
     Pagination,
     SearchForm,
     Recipe,
-  },
-  props: {
-    listingTitle: String,
-    recipes: Array,
-    pagination: Object,
   },
 };
 </script>

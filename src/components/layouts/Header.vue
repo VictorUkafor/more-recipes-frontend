@@ -2,7 +2,7 @@
 <header
 class="header"
 :style="{
-    backgroundImage: 'url('+ require('@/'+headerImage) +')',
+    backgroundImage: 'url('+ require('@/'+$store.getters.headerImage) +')',
     backgroundPosition: 'top center'
     }"
      >
@@ -12,21 +12,14 @@ class="header"
         </button>
         <div class="logo">
             <a href="/">
-            <img
-            src="../../assets/img/logo.png"
-            alt="Recipes"
-            height="40"
-            width="170"
-            />
+            <img src="../../assets/img/logo.png"
+            alt="Recipes" height="40" width="170" />
             </a>
             </div>
             <LogIns />
-            <HeaderNav :page=page />
+            <HeaderNav />
         </div>
-        <HeaderAd
-        :headerContent=headerContent
-        :headerAction=headerAction
-        />
+        <HeaderAd />
         </header>
 </template>
 
@@ -37,12 +30,6 @@ import LogIns from '../components/LogIns';
 
 export default {
   name: 'Header',
-  props: {
-    headerContent: String,
-    headerAction: Array,
-    page: String,
-    headerImage: String,
-  },
   components: {
     HeaderNav,
     HeaderAd,

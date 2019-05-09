@@ -247,6 +247,11 @@ button {
 .recipes-item-description>.title>a {
     color: #403300;
     text-decoration: none;
+    font-weight: bold;
+}
+
+.recipes-item-description>.title>a:hover {
+    text-decoration: underline;
 }
 
 .recipes-item-text {
@@ -257,6 +262,15 @@ button {
 
 .recipes-item-text p {
     margin: 0;
+}
+
+.recipes-item-text p a{
+    text-decoration: none;
+    color: #403300;
+}
+
+.recipes-item-text p a:hover {
+    text-decoration: underline;
 }
 
 .recipes-item-footer {
@@ -271,6 +285,7 @@ button {
 
 .recipes-item-icon2 {
     float: right;
+    margin-right: 5%;
 }
 
 
@@ -578,6 +593,16 @@ nav a {
 nav .active a {
     font-weight: bold;
      }
+
+     .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        margin-right: 30%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 
 
 

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '../components/Pages/Home';
-import About from '../components/About';
+import Home from '../pages/Home';
 
 Vue.use(Router);
 
@@ -16,11 +15,6 @@ export default new Router({
     {
       path: '/home',
       redirect: '/',
-    },
-    {
-      path: '/about',
-      name: 'About',
-      component: About,
     },
   ],
 });

@@ -5,12 +5,12 @@
       <ul class="nav-footer">
         <li v-for="(link, i) in links"
         :key="i"
-        :class="page === link.title? 'active':''">
+        :class="$store.getters.page === link.title? 'active':''">
         <a :href="link.link">{{link.title}}</a>
         </li>
       </ul>
      </nav>
-     <div class="copyright">more-recipes app &copy; 2017 Copyright</div>
+     <div class="copyright">More Recipes app &copy; 2019 Copyright</div>
     </div>
 </footer>
 </template>
@@ -18,9 +18,6 @@
 <script>
 export default {
   name: 'Footer',
-  props: {
-    page: String,
-  },
   data() {
     return {
       links: [
